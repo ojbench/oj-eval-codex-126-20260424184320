@@ -41,8 +41,8 @@ class ACMOJClient:
         
     def submit_code(self, problem_id: int, language: str, code_text: str) -> Optional[Dict]:
         data = {
-            language: language,
-            code: code_text
+            'language': language,
+            'code': code_text,
         }
         result = self._make_request(POST, f/problem/{problem_id}/submit, data=data)
         if result and 'id' in result:
